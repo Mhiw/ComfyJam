@@ -6,8 +6,10 @@ extends CharacterBody3D
 @export var gravity: float = -10
 @export var camera: Camera3D
 
+var camera_velocity: Vector2
+
 func _ready() -> void:
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func jump() -> void:
 	if is_on_floor():
@@ -22,18 +24,24 @@ func process_input() -> void:
 	if Input.is_action_pressed("movement_left"):
 		velocity.x += 1
 	if Input.is_action_pressed("movement_forward"):
-		velocity.z += 1
-	if Input.is_action_pressed("movement_back"):
 		velocity.z -= 1
+	if Input.is_action_pressed("movement_back"):
+		velocity.z += 1
 	if Input.is_action_pressed("movement_jump"):
 		jump()
 
 func process_movement() -> void:
-	velocity.rotated(camera.global_basis * Vector3.FORWARD)
+	camera.rotate_object_local(Vector3.RIGHT, -camera_velocity.y * get_process_delta_time())
+	camera.rotate_object_local(Vector3.UP, -camera_velocity.x * get_process_delta_time())
+	camera_velocity = Vector2(0, 0)
 
 	move_and_slide()
 
 	velocity = Vector3(0, 0, 0)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		camera_velocity = Vector2(event.relative.x, event.relative.y)
 
 func _process(delta: float) -> void:
 	process_input()
