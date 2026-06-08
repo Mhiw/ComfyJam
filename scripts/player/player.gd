@@ -3,7 +3,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const ACCELERATION = 15.0
-const FRICTION = 12.0
+const FRICTION = 16.0
 
 @export var sensitivity = 0.002
 
@@ -29,10 +29,15 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input.x, 0, input.y)).normalized()
 
 	if direction:
-		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION * delta)
-		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCELERATION * delta)
+		var horizontal := Vector2(velocity.x, velocity.z)
+		var target := Vector2(direction.x, direction.z) * SPEED
+		horizontal = horizontal.move_toward(target, ACCELERATION * delta)
+		velocity.x = horizontal.x
+		velocity.z = horizontal.y
 	else:
-		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
-		velocity.z = move_toward(velocity.z, 0, FRICTION * delta)
+		var horizontal := Vector2(velocity.x, velocity.z)
+		horizontal = horizontal.move_toward(Vector2.ZERO, FRICTION * delta)
+		velocity.x = horizontal.x
+		velocity.z = horizontal.y
 
 	move_and_slide()
