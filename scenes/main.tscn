@@ -29,6 +29,22 @@ material = SubResource("StandardMaterial3D_o5qli")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_o5qli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(1, 0.7176471, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_sugp2"]
+material = SubResource("StandardMaterial3D_0wfyh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+albedo_color = Color(0.11372549, 0.3254902, 0.47058824, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
+material = SubResource("StandardMaterial3D_sugp2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
+
 [node name="Main" type="Node3D" unique_id=2073119671]
 
 [node name="Player" parent="." unique_id=2055107879 instance=ExtResource("1_o5qli")]
@@ -69,3 +85,22 @@ mesh = SubResource("BoxMesh_o5qli")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D2/StaticBody3D" unique_id=467594724]
 shape = SubResource("BoxShape3D_sugp2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Objects" unique_id=674522812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.944645, 8.010166, 11.075193)
+mass = 0.001
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/RigidBody3D" unique_id=1410941983]
+shape = SubResource("SphereShape3D_o5qli")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/RigidBody3D" unique_id=1731319929]
+mesh = SubResource("SphereMesh_sugp2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Objects" unique_id=1479633574]
+transform = Transform3D(3.5185366, -0.19586933, 9.61316, 0, 0.36951712, 8.760453, -4.148916, -0.16610926, 8.152553, 6.8513756, 2.6089125, 7.856745)
+mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/MeshInstance3D3" unique_id=776174669]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D3/StaticBody3D" unique_id=1485140036]
+shape = SubResource("BoxShape3D_jyhfs")
