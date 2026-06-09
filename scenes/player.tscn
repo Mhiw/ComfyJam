@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1rgehp64tsqn"]
 
 [ext_resource type="Script" uid="uid://bkfxqwph43v6x" path="res://scripts/player/player.gd" id="1_3vyb7"]
-[ext_resource type="Shader" uid="uid://bljus0x85uv01" path="res://scripts/pixel_shader.gdshader" id="2_g2els"]
+[ext_resource type="Shader" uid="uid://bljus0x85uv01" path="res://scripts/pixel_shader/pixel_shader.gdshader" id="2_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 
@@ -10,7 +10,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhqgy"]
 render_priority = 0
 shader = ExtResource("2_g2els")
-shader_parameter/pixel_size = 4.0
+shader_parameter/pixel_size = 2.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_dqkch"]
 material = SubResource("ShaderMaterial_qhqgy")

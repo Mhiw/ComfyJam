@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e0gv7f1h1iji"]
 
 [ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://beaiens7lf5dx" path="res://scenes/cubeman.tscn" id="2_0wfyh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -47,7 +48,7 @@ material = SubResource("StandardMaterial3D_sugp2")
 
 [node name="Main" type="Node3D" unique_id=2073119671]
 
-[node name="Player" parent="." unique_id=2055107879 instance=ExtResource("1_o5qli")]
+[node name="Player" parent="." unique_id=2055107879 groups=["player"] instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.328521, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1454676382]
@@ -69,7 +70,7 @@ shape = SubResource("ConcavePolygonShape3D_o5qli")
 [node name="Objects" type="Node" parent="." unique_id=705188395]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects" unique_id=1633914369]
-transform = Transform3D(3.2056937, 0, -1.1329294, 0, 3.4, 0, 1.1329294, 0, 3.2056937, -7.6702356, 1.5041837, 0)
+transform = Transform3D(3.2056937, 0, -1.1329294, 0, 3.4, 0, 1.1329294, 0, 3.2056937, -7.6702356, 0.8383969, 0)
 mesh = SubResource("BoxMesh_o5qli")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Objects/MeshInstance3D" unique_id=1048467598]
@@ -104,3 +105,6 @@ mesh = SubResource("BoxMesh_0wfyh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D3/StaticBody3D" unique_id=1485140036]
 shape = SubResource("BoxShape3D_jyhfs")
+
+[node name="Cubeman" parent="." unique_id=2115244962 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0922506, -4.072494)
