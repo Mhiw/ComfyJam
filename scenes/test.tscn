@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://e0gv7f1h1iji"]
 
-[ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://beaiens7lf5dx" path="res://scenes/cubeman.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://beaiens7lf5dx" path="res://scenes/cubeman.tscn" id="2_iyx0m"]
+[ext_resource type="ArrayMesh" uid="uid://twakgu1ws30" path="res://data/assets/3d assets/test/Barrel_1.obj" id="3_iyx0m"]
+[ext_resource type="Material" uid="uid://3ntm3jdn5o1y" path="res://data/assets/3d assets/test/barrel.tres" id="4_74lek"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,9 +48,9 @@ material = SubResource("StandardMaterial3D_sugp2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
 
-[node name="Main" type="Node3D" unique_id=2073119671]
+[node name="TestScene" type="Node3D" unique_id=2073119671]
 
-[node name="Player" parent="." unique_id=2055107879 groups=["player"] instance=ExtResource("1_o5qli")]
+[node name="Player" parent="." unique_id=2055107879 groups=["player"] instance=ExtResource("1_bl13t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.328521, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1454676382]
@@ -106,5 +108,10 @@ mesh = SubResource("BoxMesh_0wfyh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D3/StaticBody3D" unique_id=1485140036]
 shape = SubResource("BoxShape3D_jyhfs")
 
-[node name="Cubeman" parent="." unique_id=2115244962 instance=ExtResource("2_0wfyh")]
+[node name="Cubeman" parent="." unique_id=2115244962 instance=ExtResource("2_iyx0m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0922506, -4.072494)
+
+[node name="Barrel1" type="MeshInstance3D" parent="." unique_id=1209365468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44329214, 0, 4.769868)
+mesh = ExtResource("3_iyx0m")
+surface_material_override/0 = ExtResource("4_74lek")
