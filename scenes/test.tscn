@@ -2,12 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://beaiens7lf5dx" path="res://scenes/cubeman.tscn" id="2_iyx0m"]
-[ext_resource type="ArrayMesh" uid="uid://twakgu1ws30" path="res://data/assets/3d assets/test/Barrel_1.obj" id="3_iyx0m"]
-[ext_resource type="Material" uid="uid://3ntm3jdn5o1y" path="res://data/assets/3d assets/test/barrel.tres" id="4_74lek"]
+[ext_resource type="PackedScene" uid="uid://c0f47b36phfme" path="res://data/assets/3d assets/test/Islandtest.glb" id="3_iyx0m"]
+[ext_resource type="ArrayMesh" uid="uid://c1k5x6c4divok" path="res://data/assets/3d assets/test/Tree/BananaTree_1.obj" id="4_j5jx5"]
+[ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
 [sub_resource type="Sky" id="Sky_sugp2"]
 sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
@@ -16,37 +15,32 @@ sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
 background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 1.16
+ssao_intensity = 3.4
+fog_enabled = true
+fog_light_color = Color(1, 0.74960345, 0.5567131, 1)
+fog_light_energy = 0.67
+fog_aerial_perspective = 0.336
+fog_sky_affect = 0.392
+fog_depth_curve = 0.5176325
+fog_depth_begin = 25.0
+fog_depth_end = 200.0
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_brightness = 0.94
+adjustment_contrast = 1.02
+adjustment_saturation = 1.19
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_tbgi4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyx0m"]
+albedo_color = Color(2.117753e-06, 0.4516098, 0.6984767, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o5qli"]
-data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_74lek"]
+material = SubResource("StandardMaterial3D_iyx0m")
+size = Vector2(5000, 5000)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
-albedo_color = Color(0.5176471, 0.21960784, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
-material = SubResource("StandardMaterial3D_o5qli")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_o5qli"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
-albedo_color = Color(1, 0.7176471, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_sugp2"]
-material = SubResource("StandardMaterial3D_0wfyh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
-albedo_color = Color(0.11372549, 0.3254902, 0.47058824, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
-material = SubResource("StandardMaterial3D_sugp2")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpvoh"]
+albedo_texture = ExtResource("5_at5dv")
 
 [node name="TestScene" type="Node3D" unique_id=2073119671]
 
@@ -54,64 +48,105 @@ material = SubResource("StandardMaterial3D_sugp2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.328521, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1454676382]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(0.48008025, 0.567091, 0.6692763, 0.68196607, -0.72115886, 0.12186935, 0.55176556, 0.39791667, -0.7329509, -0.14846134, 17.879549, -3.3628585)
+light_color = Color(1, 1, 0.60784316, 1)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1980643620]
 environment = SubResource("Environment_jyhfs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1160996643]
-transform = Transform3D(20.02, 0, 0, 0, 20.02, 0, 0, 0, 20.02, 0, 0, 0)
-mesh = SubResource("PlaneMesh_tbgi4")
+[node name="NPCs" type="Node" parent="." unique_id=461794979]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2081711079]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1815364999]
-shape = SubResource("ConcavePolygonShape3D_o5qli")
-
-[node name="Objects" type="Node" parent="." unique_id=705188395]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects" unique_id=1633914369]
-transform = Transform3D(3.2056937, 0, -1.1329294, 0, 3.4, 0, 1.1329294, 0, 3.2056937, -7.6702356, 0.8383969, 0)
-mesh = SubResource("BoxMesh_o5qli")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/MeshInstance3D" unique_id=1048467598]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D/StaticBody3D" unique_id=1645426108]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Objects" unique_id=1483014413]
-transform = Transform3D(1.9328446, 0, -0.6830897, 0, 2.05, 0, 0.6830897, 0, 1.9328446, -6.8512626, 0.7384237, 2.9266534)
-mesh = SubResource("BoxMesh_o5qli")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/MeshInstance3D2" unique_id=1768029456]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D2/StaticBody3D" unique_id=467594724]
-shape = SubResource("BoxShape3D_sugp2")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="Objects" unique_id=674522812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.944645, 8.010166, 11.075193)
-mass = 0.001
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/RigidBody3D" unique_id=1410941983]
-shape = SubResource("SphereShape3D_o5qli")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/RigidBody3D" unique_id=1731319929]
-mesh = SubResource("SphereMesh_sugp2")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Objects" unique_id=1479633574]
-transform = Transform3D(3.5185366, -0.19586933, 9.61316, 0, 0.36951712, 8.760453, -4.148916, -0.16610926, 8.152553, 6.8513756, 2.6089125, 7.856745)
-mesh = SubResource("BoxMesh_0wfyh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/MeshInstance3D3" unique_id=776174669]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/MeshInstance3D3/StaticBody3D" unique_id=1485140036]
-shape = SubResource("BoxShape3D_jyhfs")
-
-[node name="Cubeman" parent="." unique_id=2115244962 instance=ExtResource("2_iyx0m")]
+[node name="Cubeman" parent="NPCs" unique_id=2115244962 instance=ExtResource("2_iyx0m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0922506, -4.072494)
 
-[node name="Barrel1" type="MeshInstance3D" parent="." unique_id=1209365468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44329214, 0, 4.769868)
-mesh = ExtResource("3_iyx0m")
-surface_material_override/0 = ExtResource("4_74lek")
+[node name="Objects" type="Node" parent="." unique_id=1372922229]
+
+[node name="Islandtest" parent="Objects" unique_id=851223755 instance=ExtResource("3_iyx0m")]
+transform = Transform3D(32.015, 0, 0, 0, 32.015, 0, 0, 0, 32.015, 0.1973157, -10.3129835, -0.5542722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects" unique_id=843443488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.968567, 0)
+mesh = SubResource("PlaneMesh_74lek")
+
+[node name="Trees" type="Node" parent="Objects" unique_id=443532996]
+
+[node name="BananaTree1" type="MeshInstance3D" parent="Objects/Trees" unique_id=2120170326]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.281799, 3.787662, 11.205684)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree2" type="MeshInstance3D" parent="Objects/Trees" unique_id=688235366]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.42181, 2.979054, -18.562534)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree3" type="MeshInstance3D" parent="Objects/Trees" unique_id=383232580]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.309461, 2.554256, -25.703985)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree4" type="MeshInstance3D" parent="Objects/Trees" unique_id=293860431]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 11.201629, 3.0590081, -34.358234)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree5" type="MeshInstance3D" parent="Objects/Trees" unique_id=1150978152]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -19.148727, 4.081803, -41.987923)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree6" type="MeshInstance3D" parent="Objects/Trees" unique_id=1781215507]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -32.316975, 4.081803, 2.3335953)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree7" type="MeshInstance3D" parent="Objects/Trees" unique_id=616574879]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -38.916878, 3.955678, -1.0045414)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree8" type="MeshInstance3D" parent="Objects/Trees" unique_id=1600417078]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -24.511745, 2.8886614, -9.916193)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree9" type="MeshInstance3D" parent="Objects/Trees" unique_id=324424631]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -29.34028, 1.3626513, -15.434639)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree10" type="MeshInstance3D" parent="Objects/Trees" unique_id=877587400]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.485455, 2.5231571, 8.658314)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree11" type="MeshInstance3D" parent="Objects/Trees" unique_id=1670305165]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15.419287, 2.9786553, 11.630128)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree12" type="MeshInstance3D" parent="Objects/Trees" unique_id=1957002567]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 26.661842, 4.1177793, 3.562375)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree13" type="MeshInstance3D" parent="Objects/Trees" unique_id=1369202207]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 25.345118, 3.4850087, -13.60701)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree14" type="MeshInstance3D" parent="Objects/Trees" unique_id=1649779325]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 31.754686, 4.1141057, -20.016176)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree15" type="MeshInstance3D" parent="Objects/Trees" unique_id=6928597]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.7836857, 0.8782253, -11.828645)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="BananaTree16" type="MeshInstance3D" parent="Objects/Trees" unique_id=1939941232]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.377511, 1.0678406, -22.812994)
+mesh = ExtResource("4_j5jx5")
+surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
