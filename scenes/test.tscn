@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e0gv7f1h1iji"]
 
 [ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://64ud4a2w45w8" path="res://scenes/dialogue_box.tscn" id="1_lpvoh"]
 [ext_resource type="PackedScene" uid="uid://beaiens7lf5dx" path="res://scenes/cubeman.tscn" id="2_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://c0f47b36phfme" path="res://data/assets/3d assets/test/Islandtest.glb" id="3_iyx0m"]
 [ext_resource type="ArrayMesh" uid="uid://c1k5x6c4divok" path="res://data/assets/3d assets/test/Tree/BananaTree_1.obj" id="4_j5jx5"]
@@ -43,6 +44,9 @@ size = Vector2(5000, 5000)
 albedo_texture = ExtResource("5_at5dv")
 
 [node name="TestScene" type="Node3D" unique_id=2073119671]
+
+[node name="DialogueBox" parent="." unique_id=1395368664 instance=ExtResource("1_lpvoh")]
+follow_viewport_enabled = true
 
 [node name="Player" parent="." unique_id=2055107879 groups=["player"] instance=ExtResource("1_bl13t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.328521, 0)

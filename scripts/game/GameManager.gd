@@ -3,6 +3,8 @@ extends Node
 var current_day := 1
 var dialogue_data := {}
 
+var in_dialogue := false
+
 func _ready():
 	load_dialogue()
 
@@ -12,7 +14,10 @@ func load_dialogue():
 	print("Dialogue loaded: ", dialogue_data)
 	
 func get_dialogue(npc_id: String):
-	return dialogue_data[npc_id][str(current_day)] # Namnet på npcn från .json-filen + dagarna.
+	var npc = dialogue_data[npc_id]
+	var name = npc["name"]
+	var line = npc[str(current_day)]
+	return "(" + name + ")" + ": " + line
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("debug_next_day"): # O

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://64ud4a2w45w8"]
+
+[ext_resource type="Script" uid="uid://nhukyl1s1c8b" path="res://scripts/game/dialogue_box.gd" id="1_rc1id"]
+
+[node name="DialogueBox" type="CanvasLayer" unique_id=1395368664]
+script = ExtResource("1_rc1id")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=466616170]
+custom_minimum_size = Vector2(1000, 3.465)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -499.87
+offset_top = -195.91498
+offset_right = 500.13
+offset_bottom = -70.91498
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1116027089]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1288251996]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+fit_content = true
