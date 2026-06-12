@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c0f47b36phfme" path="res://data/assets/3d assets/test/Islandtest.glb" id="3_iyx0m"]
 [ext_resource type="ArrayMesh" uid="uid://c1k5x6c4divok" path="res://data/assets/3d assets/test/Tree/BananaTree_1.obj" id="4_j5jx5"]
 [ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
+[ext_resource type="Texture2D" uid="uid://cbsmiwy7ac5mu" path="res://icon.svg" id="7_at5dv"]
+[ext_resource type="PackedScene" uid="uid://vvlqtkvfrd4d" path="res://scenes/camera.tscn" id="8_jcd4p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -154,3 +156,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.377511, 1.0678406, -22.812994)
 mesh = ExtResource("4_j5jx5")
 surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1718150710]
+transform = Transform3D(0.5641748, 0, 0.8256554, 0, 1, 0, -0.8256554, 0, 0.5641748, 0, 2, -5)
+layers = 1023
+texture = ExtResource("7_at5dv")
+
+[node name="Camera" parent="." unique_id=425053927 instance=ExtResource("8_jcd4p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.026105, 3.7698846, -4.793849)
