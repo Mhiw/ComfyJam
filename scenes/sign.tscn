@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cf14xntijnd27" path="res://scripts/sign/sign.gd" id="1_kd50q"]
 [ext_resource type="PackedScene" uid="uid://l4kbp67tvv0a" path="res://assets/models/sign/sign.glb" id="1_shbub"]
+[ext_resource type="FontFile" uid="uid://c3px1o1txtx2x" path="res://assets/fonts/ARCADECLASSIC.TTF" id="3_8yyji"]
 
 [node name="sign" type="Node3D" unique_id=1802892978]
 script = ExtResource("1_kd50q")
@@ -15,8 +16,12 @@ transform = Transform3D(-0.75, 0, 6.556708e-08, 0, 0.75, 0, -6.556708e-08, 0, -0
 transform = Transform3D(0.99773264, 0.06730133, 0, -0.06730133, 0.99773264, 0, 0, 0, 1, 0.05313573, 1.7579198, 0.26960388)
 alpha_cut = 1
 text = "Sample texte"
+font = ExtResource("3_8yyji")
+outline_size = 10
 
 [node name="Under" type="Label3D" parent="text" unique_id=95633379]
 transform = Transform3D(0.99773264, 0.06730133, 0, -0.06730133, 0.99773264, 0, 0, 0, 1, 0.05313573, 1.2773992, 0.26960388)
 alpha_cut = 1
 text = "Sample texte"
+font = ExtResource("3_8yyji")
+outline_size = 10
