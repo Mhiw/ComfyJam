@@ -7,6 +7,8 @@ var in_dialogue := false
 
 var player_sensitivity = 0.002
 
+var photos := []
+
 func _ready():
 	load_dialogue()
 
@@ -20,6 +22,15 @@ func get_dialogue(npc_id: String):
 	var name = npc["name"]
 	var line = npc[str(current_day)]
 	return "(" + name + ")" + ": " + line
+
+
+func take_photo():
+	await RenderingServer.frame_post_draw
+	var image = get_viewport().get_texture().get_image()
+	var texture = ImageTexture.create_from_image(image)
+	photos.append(texture)
+	print("Photo taken! Total: ", photos.size())
+
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("debug_next_day"): # O

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cdcopoc8dogsn"]
+
+[ext_resource type="Script" uid="uid://cnxe8yvthbh16" path="res://scripts/game/photo_catalog.gd" id="1_7v3ru"]
+
+[node name="PhotoCatalog" type="CanvasLayer" unique_id=715499009]
+process_mode = 3
+script = ExtResource("1_7v3ru")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=20973260]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1017252320]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Photos" type="Label" parent="VBoxContainer" unique_id=1093581456]
+layout_mode = 2
+text = "Photos"
+
+[node name="PhotoThumbnails" type="HBoxContainer" parent="VBoxContainer" unique_id=392456690]
+layout_mode = 2
+
+[node name="Close" type="Button" parent="VBoxContainer" unique_id=1169434174]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="VBoxContainer/Close" to="." method="_on_close_pressed"]
