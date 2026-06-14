@@ -8,7 +8,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dqkch"]
-render_priority = 0
+render_priority = 127
 shader = ExtResource("3_qhqgy")
 shader_parameter/pixel_size = 1.0
 shader_parameter/levels = 33.0
@@ -33,6 +33,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5027424, 0)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=365433037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.50609857)
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_qlg0r")
