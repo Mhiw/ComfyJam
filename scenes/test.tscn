@@ -7,6 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c1k5x6c4divok" path="res://data/assets/3d assets/test/Tree/BananaTree_1.obj" id="4_j5jx5"]
 [ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
 [ext_resource type="PackedScene" uid="uid://dv8i0jvu7jdtu" path="res://scenes/sign.tscn" id="7_at5dv"]
+[ext_resource type="PackedScene" uid="uid://dtrf0p1ik0n2u" path="res://scenes/clueboard.tscn" id="8_jcd4p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -160,6 +161,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10785074, 0.56930226, -0.25309768)
 locations = [NodePath("../../SignPath1/1"), NodePath("../../SignPath1/2"), NodePath("../../SignPath1/3")]
 contents = Array[Array]([["Hej 1", "Hej 1.2"], ["Hej 2", "Hej 2.2"], ["Hej 3", "Hej 3.2"]])
+
+[node name="clueboard" parent="Objects" unique_id=1018686595 instance=ExtResource("8_jcd4p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.9276135, 0.8463036, -2.005441)
 
 [node name="SignPath1" type="Node" parent="." unique_id=395490796]
 

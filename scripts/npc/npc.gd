@@ -14,7 +14,6 @@ func _on_body_exited(body: Node3D) -> void:
 		player_nearby = false
 		DialogueBox.hide_dialogue() 
 
-
 func _input(event: InputEvent):
 	if player_nearby and Input.is_action_just_pressed("interact"): # E
 		var line: String = GameManager.get_dialogue(npc_id)

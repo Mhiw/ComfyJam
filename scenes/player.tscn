@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1rgehp64tsqn"]
 
 [ext_resource type="Script" uid="uid://bkfxqwph43v6x" path="res://scripts/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cbsmiwy7ac5mu" path="res://icon.svg" id="3_dqkch"]
 [ext_resource type="Shader" uid="uid://mt5cxxi4cjgk" path="res://scripts/pixel_shader/pixel.gdshader" id="3_qhqgy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
@@ -33,5 +34,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5027424, 0)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=365433037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.50609857)
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_qlg0r")
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera3D" unique_id=344178360]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, -0.4535296)
+texture = ExtResource("3_dqkch")
+
+[node name="Pointer" type="RayCast3D" parent="Camera3D" unique_id=1242622604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5186182)
+target_position = Vector3(0, 0, -2)
+collision_mask = 8

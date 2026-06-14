@@ -7,6 +7,8 @@ const FRICTION = 16.0
 
 @onready var camera: Camera3D = $Camera3D
 
+@onready var picture_scene = preload("res://scenes/picture.tscn")
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -17,6 +19,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, -PI / 3, PI / 3)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and $Camera3D/Pointer.is_colliding() and GameManager.photos.size() > 0:
+		
+		var picture = picture_scene.instantiate()
+		picture.position = $Camera3D/Pointer.get_collision_point()
+		#picture.rotation = $Camera3D/Pointer.get_collision_normal()
+		picture.scale = Vector3(0.05, 0.05, 0.05)
+		picture.texture = GameManager.photos[GameManager.photos.size() - 1]
+		get_tree().root.add_child(picture)
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -31,7 +42,6 @@ func _physics_process(delta: float) -> void:
 
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	var direction := (transform.basis * Vector3(input.x, 0, input.y)).normalized()
-
 
 	if direction:
 		var horizontal := Vector2(velocity.x, velocity.z)

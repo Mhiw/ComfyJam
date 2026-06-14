@@ -23,7 +23,6 @@ func get_dialogue(npc_id: String):
 	var line = npc[str(current_day)]
 	return "(" + name + ")" + ": " + line
 
-
 func take_photo():
 	await RenderingServer.frame_post_draw
 	var image = get_viewport().get_texture().get_image()
