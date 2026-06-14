@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://bfb51usgubvjh"
 DialogueBox="*uid://64ud4a2w45w8"
+PauseMenu="*uid://cmxe5cdj6bj81"
+Settings="*uid://det03q7q77y03"
 
 [display]
 

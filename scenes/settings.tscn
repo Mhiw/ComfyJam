@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://det03q7q77y03"]
+
+[ext_resource type="Script" uid="uid://c8a1w2qe8qdf3" path="res://scripts/game/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="CanvasLayer" unique_id=44443079]
+process_mode = 3
+script = ExtResource("1_5p8wc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1416753865]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=943407565]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Mouse_Sensitivity" type="HSlider" parent="VBoxContainer" unique_id=1338150909]
+layout_mode = 2
+max_value = 0.01
+step = 0.001
+
+[node name="BACK" type="Button" parent="VBoxContainer" unique_id=1093471495]
+layout_mode = 2
+text = "BACK"
+
+[connection signal="value_changed" from="VBoxContainer/Mouse_Sensitivity" to="." method="_on_mouse_sensitivity_value_changed"]
+[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_back_pressed"]

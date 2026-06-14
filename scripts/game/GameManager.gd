@@ -5,6 +5,8 @@ var dialogue_data := {}
 
 var in_dialogue := false
 
+var player_sensitivity = 0.002
+
 func _ready():
 	load_dialogue()
 

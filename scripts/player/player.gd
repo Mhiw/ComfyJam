@@ -5,8 +5,6 @@ const JUMP_VELOCITY = 4.5
 const ACCELERATION = 15.0
 const FRICTION = 16.0
 
-@export var sensitivity = 0.002
-
 @onready var camera: Camera3D = $Camera3D
 
 func _ready() -> void:
@@ -14,8 +12,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * sensitivity)
-		camera.rotate_x(-event.relative.y * sensitivity)
+		rotate_y(-event.relative.x * GameManager.player_sensitivity)
+		camera.rotate_x(-event.relative.y * GameManager.player_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI / 3, PI / 3)
 
 func _physics_process(delta: float) -> void:
