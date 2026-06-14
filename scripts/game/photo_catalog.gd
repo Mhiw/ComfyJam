@@ -27,7 +27,6 @@ func load_photos():
 		img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		photo_container.add_child(img)
 
-
 func _on_close_pressed() -> void:
 	close()
 
