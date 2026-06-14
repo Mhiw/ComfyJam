@@ -53,6 +53,9 @@ follow_viewport_enabled = true
 [node name="Player" parent="." unique_id=2055107879 groups=["player"] instance=ExtResource("1_bl13t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.328521, 0)
 
+[node name="Camera" parent="Player" unique_id=425053927 instance=ExtResource("8_jcd4p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.10886741, 0.24081755, -1.0714941)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1454676382]
 transform = Transform3D(0.48008025, 0.567091, 0.6692763, 0.68196607, -0.72115886, 0.12186935, 0.55176556, 0.39791667, -0.7329509, -0.14846134, 17.879549, -3.3628585)
 light_color = Color(1, 1, 0.60784316, 1)
@@ -161,6 +164,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
 transform = Transform3D(0.5641748, 0, 0.8256554, 0, 1, 0, -0.8256554, 0, 0.5641748, 0, 2, -5)
 layers = 1023
 texture = ExtResource("7_at5dv")
-
-[node name="Camera" parent="." unique_id=425053927 instance=ExtResource("8_jcd4p")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.026105, 3.7698846, -4.793849)

@@ -3,6 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://c7t34b8do7aax" path="res://assets/models/camera.glb" id="1_cvpoc"]
 [ext_resource type="Script" uid="uid://brmdvtw0ujk6u" path="res://scripts/camera/camera.gd" id="2_kod1s"]
 
-[node name="Camera" unique_id=425053927 instance=ExtResource("1_cvpoc")]
+[node name="Camera" unique_id=425053927 node_paths=PackedStringArray("viewport", "camera", "camera_point") instance=ExtResource("1_cvpoc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("2_kod1s")
+viewport = NodePath("SubViewport")
+camera = NodePath("SubViewport/Camera3D")
+camera_point = NodePath("CameraPoint")
+
+[node name="CameraPoint" type="Node3D" parent="." index="5" unique_id=208896776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10310588, 0.1497337, 4.506901e-09)
+
+[node name="SubViewport" type="SubViewport" parent="." index="6" unique_id=998281375]
+size = Vector2i(128, 128)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" index="0" unique_id=346403142]
+auto_translate_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14988224, -0.10045385)
+current = true
