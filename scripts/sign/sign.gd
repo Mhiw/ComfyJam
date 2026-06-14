@@ -16,6 +16,8 @@ func move_location() -> void:
 	$text/Under.text = contents[location_counter][1]
 
 func _ready() -> void:
+	global_position = locations[location_counter].global_position
+	global_rotation = locations[location_counter].global_rotation
 	$text/Over.text = contents[location_counter][0]
 	$text/Under.text = contents[location_counter][1]
 

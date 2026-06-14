@@ -164,10 +164,10 @@ contents = Array[Array]([["Hej 1", "Hej 1.2"], ["Hej 2", "Hej 2.2"], ["Hej 3", "
 [node name="SignPath1" type="Node" parent="." unique_id=395490796]
 
 [node name="1" type="Node3D" parent="SignPath1" unique_id=506979674]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8838513, 0, -4.4383793)
+transform = Transform3D(0.42565298, 0, 0.9048865, 0, 1, 0, -0.9048865, 0, 0.42565298, 3.8838513, 0, -4.4383793)
 
 [node name="2" type="Node3D" parent="SignPath1" unique_id=1572354732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5542474, 0, -5.632085)
+transform = Transform3D(0.75889635, -0.65121144, 0, 0.65121144, 0.75889635, 0, 0, 0, 1, -6.5542474, 0, -5.632085)
 
 [node name="3" type="Node3D" parent="SignPath1" unique_id=1620964133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51901984, 0, 4.2194796)
+transform = Transform3D(1, 0, 0, 0, 0.8457185, -0.53362924, 0, 0.53362924, 0.8457185, 0.51901984, 0, 4.2194796)
