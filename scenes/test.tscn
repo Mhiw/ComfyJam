@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0f47b36phfme" path="res://data/assets/3d assets/test/Islandtest.glb" id="3_iyx0m"]
 [ext_resource type="ArrayMesh" uid="uid://c1k5x6c4divok" path="res://data/assets/3d assets/test/Tree/BananaTree_1.obj" id="4_j5jx5"]
 [ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
+[ext_resource type="PackedScene" uid="uid://dv8i0jvu7jdtu" path="res://scenes/sign.tscn" id="7_at5dv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -154,3 +155,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.377511, 1.0678406, -22.812994)
 mesh = ExtResource("4_j5jx5")
 surface_material_override/0 = SubResource("StandardMaterial3D_lpvoh")
+
+[node name="sign" parent="Objects" unique_id=1802892978 node_paths=PackedStringArray("locations") instance=ExtResource("7_at5dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10785074, 0.56930226, -0.25309768)
+locations = [NodePath("../../SignPath1/1"), NodePath("../../SignPath1/2"), NodePath("../../SignPath1/3")]
+contents = Array[Array]([["Hej 1", "Hej 1.2"], ["Hej 2", "Hej 2.2"], ["Hej 3", "Hej 3.2"]])
+
+[node name="SignPath1" type="Node" parent="." unique_id=395490796]
+
+[node name="1" type="Node3D" parent="SignPath1" unique_id=506979674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8838513, 0, -4.4383793)
+
+[node name="2" type="Node3D" parent="SignPath1" unique_id=1572354732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5542474, 0, -5.632085)
+
+[node name="3" type="Node3D" parent="SignPath1" unique_id=1620964133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51901984, 0, 4.2194796)
