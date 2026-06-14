@@ -46,7 +46,6 @@ func load_photos() -> void:
 			img.texture = GameManager.photos[i]
 		photo_container.add_child(img)
 
-
 func _on_close_pressed() -> void:
 	close()
 
