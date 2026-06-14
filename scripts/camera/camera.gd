@@ -25,5 +25,6 @@ func _process(_delta: float) -> void:
 		take_picture()
 	
 	camera.global_position = camera_point.global_position
+	camera.global_rotation = camera_point.global_rotation
 	#camera.position = Vector3(0, 10, 0)
 	#print(camera_point.global_position)
