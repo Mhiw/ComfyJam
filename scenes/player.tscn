@@ -33,6 +33,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5027424, 0)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=365433037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.50609857)
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_qlg0r")
