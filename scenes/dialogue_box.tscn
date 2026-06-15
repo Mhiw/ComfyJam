@@ -1,28 +1,42 @@
 [gd_scene format=3 uid="uid://64ud4a2w45w8"]
 
 [ext_resource type="Script" uid="uid://nhukyl1s1c8b" path="res://scripts/game/dialogue_box.gd" id="1_rc1id"]
+[ext_resource type="FontFile" uid="uid://c3px1o1txtx2x" path="res://assets/fonts/ARCADECLASSIC.TTF" id="2_fu8b5"]
+[ext_resource type="Texture2D" uid="uid://ccgv8tpcpkdf1" path="res://data/assets/2d assets/DialogueBox.png" id="2_tm68y"]
 
 [node name="DialogueBox" type="CanvasLayer" unique_id=1395368664]
 script = ExtResource("1_rc1id")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=466616170]
-custom_minimum_size = Vector2(1000, 3.465)
+custom_minimum_size = Vector2(750, 3.465)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -499.87
-offset_top = -195.91498
-offset_right = 500.13
-offset_bottom = -70.91498
+offset_left = -375.0
+offset_top = -243.70502
+offset_right = 375.0
+offset_bottom = -118.70532
 grow_horizontal = 2
 grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=320009378]
+position = Vector2(150.87, 62.914978)
+scale = Vector2(5.925928, 5.925927)
+texture = ExtResource("2_tm68y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1116027089]
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1288251996]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.26666668)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_fu8b5")
+theme_override_fonts/bold_font = ExtResource("2_fu8b5")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
