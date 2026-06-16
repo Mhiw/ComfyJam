@@ -106,15 +106,15 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -375.0
 offset_top = -243.70502
-offset_right = 625.0
-offset_bottom = -118.706665
+offset_right = 625.00024
+offset_bottom = -118.70679
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=628538223]
-position = Vector2(500, 62.5)
+position = Vector2(500, 51.05695)
 scale = Vector2(5.715, 5.715)
 texture = ExtResource("2_tm68y")
 
@@ -130,6 +130,7 @@ theme_override_fonts/normal_font = ExtResource("2_fu8b5")
 theme_override_fonts/bold_font = ExtResource("2_fu8b5")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
+tab_size = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=522963070]
 libraries/ = SubResource("AnimationLibrary_p0wdv")
