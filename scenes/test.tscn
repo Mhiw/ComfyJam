@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0f47b36phfme" path="res://data/assets/3d assets/test/Islandtest.glb" id="3_iyx0m"]
 [ext_resource type="ArrayMesh" uid="uid://c1k5x6c4divok" path="res://data/assets/3d assets/test/Tree/BananaTree_1.obj" id="4_j5jx5"]
 [ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
+[ext_resource type="PackedScene" uid="uid://sjejg46oi5u2" path="res://scenes/water.tscn" id="5_jcd4p"]
 [ext_resource type="PackedScene" uid="uid://dv8i0jvu7jdtu" path="res://scenes/sign.tscn" id="7_at5dv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -34,13 +35,6 @@ adjustment_brightness = 0.94
 adjustment_contrast = 1.02
 adjustment_saturation = 1.19
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyx0m"]
-albedo_color = Color(2.117753e-06, 0.4516098, 0.6984767, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_74lek"]
-material = SubResource("StandardMaterial3D_iyx0m")
-size = Vector2(5000, 5000)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpvoh"]
 albedo_texture = ExtResource("5_at5dv")
 
@@ -65,14 +59,13 @@ environment = SubResource("Environment_jyhfs")
 [node name="Cubeman" parent="NPCs" unique_id=2115244962 instance=ExtResource("2_iyx0m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0922506, -4.072494)
 
+[node name="Water" parent="." unique_id=1931569272 instance=ExtResource("5_jcd4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.9263773, 0)
+
 [node name="Objects" type="Node" parent="." unique_id=1372922229]
 
 [node name="Islandtest" parent="Objects" unique_id=851223755 instance=ExtResource("3_iyx0m")]
 transform = Transform3D(32.015, 0, 0, 0, 32.015, 0, 0, 0, 32.015, 0.1973157, -10.3129835, -0.5542722)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects" unique_id=843443488]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.968567, 0)
-mesh = SubResource("PlaneMesh_74lek")
 
 [node name="Trees" type="Node" parent="Objects" unique_id=443532996]
 

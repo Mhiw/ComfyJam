@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bkf3te6f1x6lx"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jeboc"]
+emission_shape = 1
+emission_sphere_radius = 2.5
+spread = 180.0
+initial_velocity_max = 14.639999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcxji"]
+albedo_color = Color(0.55112684, 0.49732727, 0.42042118, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fubqs"]
+material = SubResource("StandardMaterial3D_xcxji")
+
+[node name="Jump_Particle" type="Node3D" unique_id=1918969800]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1783489171]
+explosiveness = 0.9
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_jeboc")
+draw_pass_1 = SubResource("SphereMesh_fubqs")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://sjejg46oi5u2"]
+
+[ext_resource type="Shader" uid="uid://rg2reeknjjyc" path="res://scripts/shaders/water.gdshader" id="1_bdk6y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s3811"]
+render_priority = 0
+shader = ExtResource("1_bdk6y")
+shader_parameter/water_color = Color(0, 0.4, 0.6, 0.85)
+shader_parameter/roughness = 0.1
+shader_parameter/metallic = 0.0
+shader_parameter/wave_strength = 0.15
+shader_parameter/wave_speed1 = Vector2(0.03, 0.01)
+shader_parameter/wave_speed2 = Vector2(-0.02, 0.02)
+shader_parameter/wave_height = 0.405
+shader_parameter/wave_frequency = 1.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p1n2c"]
+material = SubResource("ShaderMaterial_s3811")
+size = Vector2(5000, 5000)
+subdivide_depth = 32
+
+[node name="Water" type="MeshInstance3D" unique_id=1931569272]
+mesh = SubResource("PlaneMesh_p1n2c")

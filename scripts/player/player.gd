@@ -1,14 +1,21 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 3.0
+const JUMP_VELOCITY = 3.0
 const ACCELERATION = 15.0
 const FRICTION = 16.0
+
+const BOB_FREQUENCY = 2.4   
+const BOB_HEIGHT = 0.03    
+const BOB_WIDTH = 0.015   
+var bob_time: float = 0.0 
+var default_cam_pos: Vector3  
 
 @onready var camera: Camera3D = $Camera3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	default_cam_pos = camera.position
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -32,7 +39,6 @@ func _physics_process(delta: float) -> void:
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	var direction := (transform.basis * Vector3(input.x, 0, input.y)).normalized()
 
-
 	if direction:
 		var horizontal := Vector2(velocity.x, velocity.z)
 		var target := Vector2(direction.x, direction.z) * SPEED
@@ -46,3 +52,21 @@ func _physics_process(delta: float) -> void:
 		velocity.z = horizontal.y
 
 	move_and_slide()
+	
+	
+	_handle_view_bobbing(delta, direction)
+
+func _handle_view_bobbing(delta: float, direction: Vector3) -> void:
+	var horizontal_speed = Vector2(velocity.x, velocity.z).length()
+	
+	if is_on_floor() and horizontal_speed > 0.1 and direction != Vector3.ZERO:
+		bob_time += delta * horizontal_speed * BOB_FREQUENCY
+		
+		var target_pos = default_cam_pos
+		target_pos.y += sin(bob_time) * BOB_HEIGHT
+		target_pos.x += cos(bob_time * 0.5) * BOB_WIDTH
+		
+		camera.position = target_pos
+	else:
+		bob_time = 0.0
+		camera.position = camera.position.lerp(default_cam_pos, delta * 10.0)
