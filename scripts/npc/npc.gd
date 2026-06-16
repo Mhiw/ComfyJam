@@ -1,5 +1,7 @@
 extends Area3D
 
+@onready var interact_show: Sprite3D = $"../Sprite3D"
+
 @export var npc_id: String = "cubeman"
 var player_nearby := false
 
@@ -7,11 +9,13 @@ var player_nearby := false
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player_nearby = true
+		interact_show.visible = true
 
 
 func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player_nearby = false
+		interact_show.visible = false
 		DialogueBox.hide_dialogue() 
 
 
@@ -22,4 +26,5 @@ func _input(event: InputEvent):
 		if DialogueBox.is_visible():
 			DialogueBox.hide_dialogue()
 		else:
+			DialogueBox.pop_up_anim()
 			DialogueBox.show_dialogue(GameManager.get_dialogue(npc_id))

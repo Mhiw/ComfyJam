@@ -2,7 +2,97 @@
 
 [ext_resource type="Script" uid="uid://nhukyl1s1c8b" path="res://scripts/game/dialogue_box.gd" id="1_rc1id"]
 [ext_resource type="FontFile" uid="uid://c3px1o1txtx2x" path="res://assets/fonts/ARCADECLASSIC.TTF" id="2_fu8b5"]
-[ext_resource type="Texture2D" uid="uid://ccgv8tpcpkdf1" path="res://data/assets/2d assets/DialogueBox.png" id="2_tm68y"]
+[ext_resource type="Texture2D" uid="uid://c0bdh41hjocvi" path="res://data/assets/2d assets/DialogueBoxLong.png" id="2_tm68y"]
+
+[sub_resource type="Animation" id="Animation_tm68y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(585, 836.295)]
+}
+
+[sub_resource type="Animation" id="Animation_p0wdv"]
+resource_name = "close"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(0.2679436, 0.2679436),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.71, 0.71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(0.2679436, 0.2679436),
+"update": 0,
+"values": [Vector2(458, 836.295), Vector2(605, 1114.29)]
+}
+
+[sub_resource type="Animation" id="Animation_hvmm2"]
+resource_name = "pop-up"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2679436, 0.2679436),
+"update": 0,
+"values": [Vector2(0.71, 0.71), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2679436, 0.2679436),
+"update": 0,
+"values": [Vector2(605, 1114.29), Vector2(458, 836.295)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p0wdv"]
+_data = {
+&"RESET": SubResource("Animation_tm68y"),
+&"close": SubResource("Animation_p0wdv"),
+&"pop-up": SubResource("Animation_hvmm2")
+}
 
 [node name="DialogueBox" type="CanvasLayer" unique_id=1395368664]
 script = ExtResource("1_rc1id")
@@ -16,16 +106,16 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -375.0
 offset_top = -243.70502
-offset_right = 375.0
-offset_bottom = -118.70532
+offset_right = 625.0
+offset_bottom = -118.706665
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=320009378]
-position = Vector2(150.87, 62.914978)
-scale = Vector2(5.925928, 5.925927)
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=628538223]
+position = Vector2(500, 62.5)
+scale = Vector2(5.715, 5.715)
 texture = ExtResource("2_tm68y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1116027089]
@@ -40,3 +130,6 @@ theme_override_fonts/normal_font = ExtResource("2_fu8b5")
 theme_override_fonts/bold_font = ExtResource("2_fu8b5")
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=522963070]
+libraries/ = SubResource("AnimationLibrary_p0wdv")
