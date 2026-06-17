@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://gndered7fj5n"]
+
+[ext_resource type="PackedScene" uid="uid://bu0rgn71m5dus" path="res://assets/models/props/camp/fireplace.glb" id="1_m47ar"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_54scn"]
+
+[sub_resource type="Curve" id="Curve_m47ar"]
+_data = [Vector2(0, 1), 0.0, -1.7001916, 0, 0, Vector2(0.63297874, 0.70786524), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.0278661, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_54scn"]
+curve = SubResource("Curve_m47ar")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m47ar"]
+lifetime_randomness = 0.4
+emission_shape_scale = Vector3(0.3, 0.3, 0.3)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0.17, 0)
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_54scn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m47ar"]
+albedo_color = Color(0.51752853, 0.26967764, 0.05215259, 1)
+emission_enabled = true
+emission = Color(0.5685991, 0.38221547, 0.18115848, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m47ar"]
+material = SubResource("StandardMaterial3D_m47ar")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="campfire" type="StaticBody3D" unique_id=1139067952]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1364434079]
+shape = SubResource("SphereShape3D_54scn")
+
+[node name="fireplace" parent="." unique_id=2132009763 instance=ExtResource("1_m47ar")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1244378061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10728747, 0)
+amount = 41
+lifetime = 5.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_m47ar")
+draw_pass_1 = SubResource("BoxMesh_m47ar")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1194410160]
+omni_range = 2.2001421

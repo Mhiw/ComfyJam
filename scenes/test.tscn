@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
 [ext_resource type="PackedScene" uid="uid://sjejg46oi5u2" path="res://scenes/water.tscn" id="5_jcd4p"]
 [ext_resource type="PackedScene" uid="uid://dv8i0jvu7jdtu" path="res://scenes/sign.tscn" id="7_at5dv"]
+[ext_resource type="PackedScene" uid="uid://6o1i7t0phrpk" path="res://scenes/campfire.tscn" id="8_jcd4p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -164,3 +165,6 @@ transform = Transform3D(0.75889635, -0.65121144, 0, 0.65121144, 0.75889635, 0, 0
 
 [node name="3" type="Node3D" parent="SignPath1" unique_id=1620964133]
 transform = Transform3D(1, 0, 0, 0, 0.8457185, -0.53362924, 0, 0.53362924, 0.8457185, 0.51901984, 0, 4.2194796)
+
+[node name="campfire" parent="." unique_id=1139067952 instance=ExtResource("8_jcd4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1675677, 0.7105081, -1.7461312)

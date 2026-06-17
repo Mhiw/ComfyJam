@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://corid8dkskovr"]
+
+[ext_resource type="PackedScene" uid="uid://c1e53yhvl4tgn" path="res://assets/models/island/island.glb" id="1_2v8eh"]
+[ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="2_g61je"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g61je"]
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_g61je")
+
+[sub_resource type="Environment" id="Environment_1uhhg"]
+background_mode = 2
+sky = SubResource("Sky_sugp2")
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 1.16
+ssao_intensity = 3.4
+fog_enabled = true
+fog_light_color = Color(1, 0.74960345, 0.5567131, 1)
+fog_light_energy = 0.67
+fog_aerial_perspective = 0.336
+fog_sky_affect = 0.392
+fog_depth_curve = 0.5176325
+fog_depth_begin = 25.0
+fog_depth_end = 200.0
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_brightness = 0.94
+adjustment_contrast = 1.02
+adjustment_saturation = 1.19
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyx0m"]
+albedo_color = Color(2.117753e-06, 0.4516098, 0.6984767, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g61je"]
+material = SubResource("StandardMaterial3D_iyx0m")
+size = Vector2(5000, 5000)
+
+[node name="island" type="Node3D" unique_id=772463228]
+
+[node name="Player" parent="." unique_id=2055107879 instance=ExtResource("2_g61je")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 122.94228, -2)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2049575435]
+transform = Transform3D(0.48008025, 0.567091, 0.6692763, 0.68196607, -0.72115886, 0.12186935, 0.55176556, 0.39791667, -0.7329509, -0.14846134, 17.879549, -3.3628585)
+light_color = Color(1, 1, 0.60784316, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1061760018]
+environment = SubResource("Environment_1uhhg")
+
+[node name="island" parent="." unique_id=959531827 instance=ExtResource("1_2v8eh")]
+
+[node name="water" type="MeshInstance3D" parent="." unique_id=679443035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.766243, 0)
+mesh = SubResource("PlaneMesh_g61je")
