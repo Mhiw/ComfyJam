@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://8pksc8wlvi66" path="res://scenes/partyman.tscn" id="5_cngje"]
 [ext_resource type="PackedScene" uid="uid://bdnbye5jp6jlg" path="res://assets/models/props/small/tree.glb" id="5_ftju0"]
 [ext_resource type="PackedScene" uid="uid://64ud4a2w45w8" path="res://scenes/dialogue_box.tscn" id="6_ftju0"]
+[ext_resource type="PackedScene" uid="uid://f868kot6t5mr" path="res://assets/models/props/small/bush.glb" id="6_mifw5"]
+[ext_resource type="PackedScene" uid="uid://dw47myyrcomac" path="res://assets/models/houses/lighthouse.glb" id="8_jxvd6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g61je"]
 
@@ -113,12 +115,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.934845, -74.612816, 86.0
 [node name="tree9" parent="Props" unique_id=161170136 instance=ExtResource("5_ftju0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.31488, -74.40371, 104.258026)
 
+[node name="bush" parent="Props" unique_id=1435452980 instance=ExtResource("6_mifw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.575485, -77.30703, 150.72284)
+
+[node name="bush2" parent="Props" unique_id=898487730 instance=ExtResource("6_mifw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.00624, -77.28393, 143.09048)
+
+[node name="bush3" parent="Props" unique_id=145057175 instance=ExtResource("6_mifw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.465576, -75.747665, 137.27428)
+
+[node name="bush4" parent="Props" unique_id=2076201601 instance=ExtResource("6_mifw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.43261, -73.20468, 112.84468)
+
+[node name="bush5" parent="Props" unique_id=969443128 instance=ExtResource("6_mifw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.209682, -74.336205, 127.865234)
+
 [node name="Objects" type="Node" parent="." unique_id=938746434]
 
 [node name="dock" parent="Objects" unique_id=1439403129 instance=ExtResource("3_1uhhg")]
 transform = Transform3D(0.19687024, 0, -0.98042953, 0, 1, 0, 0.98042953, 0, 0.19687024, -72.54623, -79.50657, 167.93367)
 
+[node name="lighthouse" parent="Objects" unique_id=2096238866 instance=ExtResource("8_jxvd6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 210.1853, -76.609024, 124.91063)
+
+[node name="rock" parent="Objects/lighthouse" unique_id=481347301 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.029375076, 0.079898834, 1.564867)
+
+[node name="rock" parent="Objects" unique_id=141039147 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 199.4657, -74.77771, 131.96922)
+
+[node name="rock2" parent="Objects" unique_id=1076923922 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(2.575, 0, 0, 0, 2.575, 0, 0, 0, 2.575, 224.72417, -74.948494, 123.35156)
+
+[node name="rock3" parent="Objects" unique_id=1573024431 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 224.5391, -75.5853, 134.50543)
+
+[node name="rock4" parent="Objects" unique_id=1418863536 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(4.035, 0, 0, 0, 4.035, 0, 0, 0, 4.035, 201.56357, -74.79504, 120.43755)
+
 [node name="npc" type="Node" parent="." unique_id=810758849]
 
-[node name="Cubeman" parent="." unique_id=2115244962 instance=ExtResource("5_cngje")]
+[node name="Cubeman" parent="npc" unique_id=2115244962 instance=ExtResource("5_cngje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.89195, -76.618164, 151.3311)
