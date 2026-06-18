@@ -44,7 +44,7 @@ size = Vector2(5000, 5000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.08527, -77.965904, 169.7042)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2049575435]
-transform = Transform3D(0.48008025, 0.567091, 0.6692763, 0.68196607, -0.72115886, 0.12186935, 0.55176556, 0.39791667, -0.7329509, -0.14846134, 17.879549, -3.3628585)
+transform = Transform3D(0.48008025, 0.56709105, 0.6692763, 0.68196607, -0.7211589, 0.12186937, 0.55176556, 0.39791667, -0.7329509, -41.792686, 17.879549, 94.57391)
 light_color = Color(1, 1, 0.60784316, 1)
 shadow_enabled = true
 
@@ -62,25 +62,25 @@ mesh = SubResource("PlaneMesh_g61je")
 [node name="rock" parent="Props" unique_id=2072986037 instance=ExtResource("3_gt8d0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.05631, -78.61051, 148.98537)
 
+[node name="rock2" parent="Props" unique_id=1274487284 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.29997, -78.16204, 152.4181)
+
+[node name="rock3" parent="Props" unique_id=1864391237 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.73063, -76.75341, 145.35243)
+
+[node name="rock4" parent="Props" unique_id=2139368379 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.473366, -76.48331, 140.88995)
+
+[node name="rock5" parent="Props" unique_id=722980919 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.44641, -75.21171, 126.79835)
+
+[node name="rock6" parent="Props" unique_id=787786075 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.83792, -74.33601, 111.97354)
+
+[node name="rock7" parent="Props" unique_id=1913518486 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.787197, -76.26764, 111.60399)
+
 [node name="Objects" type="Node" parent="." unique_id=938746434]
 
 [node name="dock" parent="Objects" unique_id=1439403129 instance=ExtResource("3_1uhhg")]
 transform = Transform3D(0.19687024, 0, -0.98042953, 0, 1, 0, 0.98042953, 0, 0.19687024, -72.54623, -79.50657, 167.93367)
-
-[node name="rock" parent="." unique_id=1274487284 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.29997, -78.16204, 152.4181)
-
-[node name="rock2" parent="." unique_id=1864391237 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.73063, -76.75341, 145.35243)
-
-[node name="rock3" parent="." unique_id=2139368379 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.473366, -76.48331, 140.88995)
-
-[node name="rock4" parent="." unique_id=722980919 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.44641, -75.21171, 126.79835)
-
-[node name="rock5" parent="." unique_id=787786075 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.83792, -74.33601, 111.97354)
-
-[node name="rock6" parent="." unique_id=1913518486 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.787197, -76.26764, 111.60399)

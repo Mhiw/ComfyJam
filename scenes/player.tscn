@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1rgehp64tsqn"]
 
 [ext_resource type="Script" uid="uid://bkfxqwph43v6x" path="res://scripts/player/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://cqmujgbyd41x2" path="res://assets/models/npc/npc.glb" id="3_dqkch"]
 [ext_resource type="Shader" uid="uid://mt5cxxi4cjgk" path="res://scripts/shaders/pixel.gdshader" id="3_qhqgy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
@@ -23,16 +24,20 @@ size = Vector2(2, 2)
 script = ExtResource("1_3vyb7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=174554976]
+visible = false
 mesh = SubResource("CapsuleMesh_u8vuu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1593809643]
 shape = SubResource("CapsuleShape3D_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2078753070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5027424, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5027424, -0.46092594)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=365433037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.50609857)
 visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_qlg0r")
+
+[node name="npc" parent="." unique_id=1407436666 instance=ExtResource("3_dqkch")]
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, -0.43558475, 0)
