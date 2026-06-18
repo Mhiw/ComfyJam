@@ -141,17 +141,17 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 210.1853, -76.609024, 124.
 [node name="rock" parent="Objects/lighthouse" unique_id=481347301 instance=ExtResource("3_gt8d0")]
 transform = Transform3D(0.295, 0, 0, 0, 0.295, 0, 0, 0, 0.295, 0.029375076, 0.079898834, 1.564867)
 
-[node name="rock" parent="Objects" unique_id=141039147 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 199.4657, -74.77771, 131.96922)
+[node name="rock2" parent="Objects/lighthouse" unique_id=141039147 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(0.24000001, 0, 0, 0, 0.24000001, 0, 0, 0, 0.24000001, -1.0719604, 0.18313122, 0.7058592)
 
-[node name="rock2" parent="Objects" unique_id=1076923922 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(2.575, 0, 0, 0, 2.575, 0, 0, 0, 2.575, 224.72417, -74.948494, 123.35156)
+[node name="rock3" parent="Objects/lighthouse" unique_id=1076923922 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(0.25750002, 0, 0, 0, 0.25750002, 0, 0, 0, 0.25750002, 1.4538879, 0.16605282, -0.15590668)
 
-[node name="rock3" parent="Objects" unique_id=1573024431 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, 224.5391, -75.5853, 134.50543)
+[node name="rock4" parent="Objects/lighthouse" unique_id=1573024431 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(0.32500002, 0, 0, 0, 0.32500002, 0, 0, 0, 0.32500002, 1.435379, 0.10237265, 0.9594803)
 
-[node name="rock4" parent="Objects" unique_id=1418863536 instance=ExtResource("3_gt8d0")]
-transform = Transform3D(4.035, 0, 0, 0, 4.035, 0, 0, 0, 4.035, 201.56357, -74.79504, 120.43755)
+[node name="rock5" parent="Objects/lighthouse" unique_id=1418863536 instance=ExtResource("3_gt8d0")]
+transform = Transform3D(0.4035, 0, 0, 0, 0.4035, 0, 0, 0, 0.4035, -0.8621731, 0.18139887, -0.4473076)
 
 [node name="npc" type="Node" parent="." unique_id=810758849]
 
