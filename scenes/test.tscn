@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dys6lk2nqcxu5" path="res://data/assets/3d assets/test/Tree/pixel-64x64.png" id="5_at5dv"]
 [ext_resource type="PackedScene" uid="uid://sjejg46oi5u2" path="res://scenes/water.tscn" id="5_jcd4p"]
 [ext_resource type="PackedScene" uid="uid://dv8i0jvu7jdtu" path="res://scenes/sign.tscn" id="7_at5dv"]
-[ext_resource type="PackedScene" uid="uid://6o1i7t0phrpk" path="res://scenes/campfire.tscn" id="8_jcd4p"]
+[ext_resource type="PackedScene" uid="uid://gndered7fj5n" path="res://scenes/campfire.tscn" id="8_jcd4p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
