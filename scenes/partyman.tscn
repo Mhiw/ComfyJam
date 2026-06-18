@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://beaiens7lf5dx"]
+[gd_scene format=3 uid="uid://8pksc8wlvi66"]
 
-[ext_resource type="Script" uid="uid://ba0k248govs6u" path="res://scripts/npc/npc.gd" id="1_dopv4"]
-[ext_resource type="Texture2D" uid="uid://cktfv0f8j6565" path="res://data/assets/2d assets/interact.png" id="2_tkswh"]
-[ext_resource type="PackedScene" uid="uid://cqmujgbyd41x2" path="res://assets/models/npc/npc.glb" id="3_6sdeh"]
+[ext_resource type="PackedScene" uid="uid://cqmujgbyd41x2" path="res://assets/models/npc/npc.glb" id="1_bnqnd"]
+[ext_resource type="Script" uid="uid://ba0k248govs6u" path="res://scripts/npc/npc.gd" id="1_qsakh"]
+[ext_resource type="Texture2D" uid="uid://cktfv0f8j6565" path="res://data/assets/2d assets/interact.png" id="2_bnqnd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dopv4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tkswh"]
 radius = 2.6517777
 
-[node name="Cubeman" type="MeshInstance3D" unique_id=2115244962]
+[node name="Partyman" type="MeshInstance3D" unique_id=2115244962]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=762733367]
 
@@ -17,7 +17,8 @@ radius = 2.6517777
 shape = SubResource("CapsuleShape3D_dopv4")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=684536829]
-script = ExtResource("1_dopv4")
+script = ExtResource("1_qsakh")
+npc_id = "partyman"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=274126101]
 shape = SubResource("SphereShape3D_tkswh")
@@ -30,9 +31,9 @@ modulate = Color(1, 1, 1, 0.6627451)
 billboard = 1
 texture_filter = 0
 render_priority = 10
-texture = ExtResource("2_tkswh")
+texture = ExtResource("2_bnqnd")
 
-[node name="npc" parent="." unique_id=1407436666 instance=ExtResource("3_6sdeh")]
+[node name="npc" parent="." unique_id=1407436666 instance=ExtResource("1_bnqnd")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.4665583, 0)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

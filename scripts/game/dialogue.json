@@ -4,5 +4,11 @@
 		"1": "You arrived early? Good. It's quieter before everyone starts adjusting things",
 		"2": "It is now day two...",
 		"3": "WHOHOO! NO WAY! DAY 3!"
+	},
+	"partyman": {
+		"name": "Partyman",
+		"1": "G'day mister. I'm partyman!",
+		"2": "It is now day two...",
+		"3": "WHOHOO! NO WAY! DAY 3!"
 	}
 }

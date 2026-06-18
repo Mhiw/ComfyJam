@@ -20,7 +20,7 @@ material = SubResource("ShaderMaterial_dqkch")
 flip_faces = true
 size = Vector2(2, 2)
 
-[node name="Player" type="CharacterBody3D" unique_id=2055107879]
+[node name="Player" type="CharacterBody3D" unique_id=2055107879 groups=["player"]]
 script = ExtResource("1_3vyb7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=174554976]
@@ -31,7 +31,7 @@ mesh = SubResource("CapsuleMesh_u8vuu")
 shape = SubResource("CapsuleShape3D_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2078753070]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5027424, -0.46092594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30065107, -0.46092594)
 
 [node name="Shader" type="MeshInstance3D" parent="Camera3D" unique_id=365433037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.50609857)
@@ -40,4 +40,4 @@ extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_qlg0r")
 
 [node name="npc" parent="." unique_id=1407436666 instance=ExtResource("3_dqkch")]
-transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, -0.43558475, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.43558475, 0)

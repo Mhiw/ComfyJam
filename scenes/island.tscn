@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c1rgehp64tsqn" path="res://scenes/player.tscn" id="2_g61je"]
 [ext_resource type="PackedScene" uid="uid://ctgvkwi81pegy" path="res://assets/models/props/dock/dock.glb" id="3_1uhhg"]
 [ext_resource type="PackedScene" uid="uid://dk24ktcs1a1dh" path="res://assets/models/props/small/rock.glb" id="3_gt8d0"]
+[ext_resource type="PackedScene" uid="uid://8pksc8wlvi66" path="res://scenes/partyman.tscn" id="5_cngje"]
+[ext_resource type="PackedScene" uid="uid://64ud4a2w45w8" path="res://scenes/dialogue_box.tscn" id="6_ftju0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g61je"]
 
@@ -39,6 +41,9 @@ material = SubResource("StandardMaterial3D_iyx0m")
 size = Vector2(5000, 5000)
 
 [node name="island" type="Node3D" unique_id=772463228]
+
+[node name="DialogueBox" parent="." unique_id=1395368664 instance=ExtResource("6_ftju0")]
+follow_viewport_enabled = true
 
 [node name="Player" parent="." unique_id=2055107879 instance=ExtResource("2_g61je")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.08527, -77.965904, 169.7042)
@@ -84,3 +89,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.787197, -76.26764, 111.60
 
 [node name="dock" parent="Objects" unique_id=1439403129 instance=ExtResource("3_1uhhg")]
 transform = Transform3D(0.19687024, 0, -0.98042953, 0, 1, 0, 0.98042953, 0, 0.19687024, -72.54623, -79.50657, 167.93367)
+
+[node name="npc" type="Node" parent="." unique_id=810758849]
+
+[node name="Cubeman" parent="." unique_id=2115244962 instance=ExtResource("5_cngje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.89195, -76.618164, 151.3311)
