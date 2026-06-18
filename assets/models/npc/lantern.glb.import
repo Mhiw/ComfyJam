@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdnbye5jp6jlg"
-path="res://.godot/imported/tree.glb-16baf9f3878fc7b09d33d80549c26602.scn"
+uid="uid://bxddrqxrnf446"
+path="res://.godot/imported/lantern.glb-2d50da61fc672f7d8409d4cfd7de001f.scn"
 
 [deps]
 
-source_file="res://assets/models/props/small/tree.glb"
-dest_files=["res://.godot/imported/tree.glb-16baf9f3878fc7b09d33d80549c26602.scn"]
+source_file="res://assets/models/npc/lantern.glb"
+dest_files=["res://.godot/imported/lantern.glb-2d50da61fc672f7d8409d4cfd7de001f.scn"]
 
 [params]
 
@@ -37,12 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Log": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

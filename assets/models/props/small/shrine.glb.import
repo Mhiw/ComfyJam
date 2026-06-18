@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdnbye5jp6jlg"
-path="res://.godot/imported/tree.glb-16baf9f3878fc7b09d33d80549c26602.scn"
+uid="uid://b5w3vplm6aq0a"
+path="res://.godot/imported/shrine.glb-5b8b91c3a5f227a11b3de7c05ae31017.scn"
 
 [deps]
 
-source_file="res://assets/models/props/small/tree.glb"
-dest_files=["res://.godot/imported/tree.glb-16baf9f3878fc7b09d33d80549c26602.scn"]
+source_file="res://assets/models/props/small/shrine.glb"
+dest_files=["res://.godot/imported/shrine.glb-5b8b91c3a5f227a11b3de7c05ae31017.scn"]
 
 [params]
 
@@ -39,7 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Log": {
+"PATH:Body": {
+"generate/physics": true
+},
+"PATH:Podium": {
 "generate/physics": true
 }
 }

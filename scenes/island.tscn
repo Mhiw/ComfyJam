@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ctgvkwi81pegy" path="res://assets/models/props/dock/dock.glb" id="3_1uhhg"]
 [ext_resource type="PackedScene" uid="uid://dk24ktcs1a1dh" path="res://assets/models/props/small/rock.glb" id="3_gt8d0"]
 [ext_resource type="PackedScene" uid="uid://8pksc8wlvi66" path="res://scenes/partyman.tscn" id="5_cngje"]
+[ext_resource type="PackedScene" uid="uid://bdnbye5jp6jlg" path="res://assets/models/props/small/tree.glb" id="5_ftju0"]
 [ext_resource type="PackedScene" uid="uid://64ud4a2w45w8" path="res://scenes/dialogue_box.tscn" id="6_ftju0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g61je"]
@@ -84,6 +85,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.83792, -74.33601, 111.973
 
 [node name="rock7" parent="Props" unique_id=1913518486 instance=ExtResource("3_gt8d0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.787197, -76.26764, 111.60399)
+
+[node name="tree" parent="Props" unique_id=719370689 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.87569, -77.83561, 139.20364)
+
+[node name="tree2" parent="Props" unique_id=1783093305 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.56419, -78.439186, 137.76575)
+
+[node name="tree3" parent="Props" unique_id=2146604323 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.355804, -76.52778, 125.77879)
+
+[node name="tree4" parent="Props" unique_id=2054299611 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.95013, -75.37415, 113.79269)
+
+[node name="tree5" parent="Props" unique_id=753773315 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.23479, -77.57579, 127.55442)
+
+[node name="tree6" parent="Props" unique_id=212545440 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.42378, -77.256454, 127.560745)
+
+[node name="tree7" parent="Props" unique_id=1284289843 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.32156, -75.44232, 107.80561)
+
+[node name="tree8" parent="Props" unique_id=1169777507 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.934845, -74.612816, 86.094955)
+
+[node name="tree9" parent="Props" unique_id=161170136 instance=ExtResource("5_ftju0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.31488, -74.40371, 104.258026)
 
 [node name="Objects" type="Node" parent="." unique_id=938746434]
 
